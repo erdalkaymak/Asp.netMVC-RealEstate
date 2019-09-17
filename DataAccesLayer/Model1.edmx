@@ -1,0 +1,1272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DbEmlakModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Adres">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="İl_Id" Type="int" />
+          <Property Name="İlce_Id" Type="int" />
+          <Property Name="Mahalle_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="Bagımsız_Ozellikler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="İlan_Tarihi" Type="datetime" />
+          <Property Name="Fiyat" Type="int" />
+          <Property Name="m2" Type="int" />
+          <Property Name="Oda_sayisi" Type="nvarchar" MaxLength="20" />
+          <Property Name="Bina_yasi" Type="int" />
+          <Property Name="Bulundugu_kat" Type="int" />
+          <Property Name="Toplam_Kat" Type="int" />
+          <Property Name="Isıtma_Tipi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Banyo_Sayısı" Type="int" />
+          <Property Name="Balkon" Type="bit" />
+          <Property Name="Esyalı" Type="bit" />
+          <Property Name="Kullanım_durumu" Type="bit" />
+          <Property Name="Site_ici" Type="bit" />
+          <Property Name="Aidat(TL)" Type="int" />
+          <Property Name="Krediye_uygun" Type="bit" />
+        </EntityType>
+        <EntityType Name="Cephe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DısOzellikler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Asansor" Type="bit" />
+          <Property Name="BuharOdası" Type="bit" />
+          <Property Name="Güvenlik" Type="bit" />
+          <Property Name="Hidrofor" Type="bit" />
+          <Property Name="IsıYalıtım" Type="bit" />
+          <Property Name="Jeneratör" Type="bit" />
+          <Property Name="KabloTV" Type="bit" />
+          <Property Name="KapalıGaraj" Type="bit" />
+          <Property Name="Kres" Type="bit" />
+          <Property Name="MüstakilHavuz" Type="bit" />
+          <Property Name="OtoPark" Type="bit" />
+          <Property Name="OyunParkı" Type="bit" />
+          <Property Name="Sauna" Type="bit" />
+          <Property Name="SesYalıtım" Type="bit" />
+          <Property Name="SporAlanı" Type="bit" />
+          <Property Name="SuDeposu" Type="bit" />
+          <Property Name="TenisKortu" Type="bit" />
+          <Property Name="Uydu" Type="bit" />
+          <Property Name="YangınMerdiveni" Type="bit" />
+          <Property Name="YüzmeHavuzu" Type="bit" />
+        </EntityType>
+        <EntityType Name="Durum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Durum" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="IcOzellikler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Adsl" Type="bit" />
+          <Property Name="AhsapDograma" Type="bit" />
+          <Property Name="AkıllıEv" Type="bit" />
+          <Property Name="Alarm" Type="bit" />
+          <Property Name="AlaturkaTuvalet" Type="bit" />
+          <Property Name="AlüminyumDograma" Type="bit" />
+          <Property Name="AmerikanMutfak" Type="bit" />
+          <Property Name="AnkastreFırın" Type="bit" />
+          <Property Name="Asansor" Type="bit" />
+          <Property Name="Balkon" Type="bit" />
+          <Property Name="Barbekü" Type="bit" />
+          <Property Name="BeyazEsya" Type="bit" />
+          <Property Name="Boyalı" Type="bit" />
+          <Property Name="BulasıkMakinesi" Type="bit" />
+          <Property Name="Buzdolabı" Type="bit" />
+          <Property Name="DuvarKagıdı" Type="bit" />
+          <Property Name="DusaKabin" Type="bit" />
+          <Property Name="EbeveynBanyosu" Type="bit" />
+          <Property Name="Fiberİnternet" Type="bit" />
+          <Property Name="Fırın" Type="bit" />
+          <Property Name="GiyinmeOdası" Type="bit" />
+          <Property Name="GommeDolap" Type="bit" />
+          <Property Name="GoruntuluTelefon" Type="bit" />
+          <Property Name="Isıcam" Type="bit" />
+          <Property Name="Jakuzi" Type="bit" />
+          <Property Name="Kiler" Type="bit" />
+          <Property Name="Klima" Type="bit" />
+          <Property Name="Kuvet" Type="bit" />
+          <Property Name="LaminatZemin" Type="bit" />
+          <Property Name="Marley" Type="bit" />
+          <Property Name="Mobilya" Type="bit" />
+          <Property Name="PvcDograma" Type="bit" />
+          <Property Name="Panjur" Type="bit" />
+          <Property Name="ParkeZemin" Type="bit" />
+          <Property Name="SeramikZemin" Type="bit" />
+          <Property Name="SetUstuOcak" Type="bit" />
+          <Property Name="SpotAydınlanma" Type="bit" />
+          <Property Name="Teras" Type="bit" />
+          <Property Name="Termosifon" Type="bit" />
+          <Property Name="Vestiyer" Type="bit" />
+          <Property Name="Wi-Fi" Type="bit" />
+          <Property Name="CamasırKurutmaMakinesi" Type="bit" />
+          <Property Name="CamasırMakinesi" Type="bit" />
+          <Property Name="CamasırOdası" Type="bit" />
+          <Property Name="CelikKapı" Type="bit" />
+          <Property Name="Sofben" Type="bit" />
+          <Property Name="Somine" Type="bit" />
+        </EntityType>
+        <EntityType Name="İl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="İlce">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Konut">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Baslık" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Acıklama" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Durum_Id" Type="int" Nullable="false" />
+          <Property Name="Bag_Ozellikler_Id" Type="int" />
+          <Property Name="Cephe_Id" Type="int" />
+          <Property Name="Adress_Id" Type="int" />
+          <Property Name="İcOzellik_Id" Type="int" />
+          <Property Name="DısOzellik_Id" Type="int" />
+          <Property Name="Muhit_Id" Type="int" />
+          <Property Name="Ulasım_Id" Type="int" />
+          <Property Name="Manzara_Id" Type="int" />
+          <Property Name="ResimTablo_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="Mahalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Manzara">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Bogaz" Type="bit" />
+          <Property Name="Deniz" Type="bit" />
+          <Property Name="Doga" Type="bit" />
+          <Property Name="Göl" Type="bit" />
+          <Property Name="Havuz" Type="bit" />
+          <Property Name="Sehir" Type="bit" />
+        </EntityType>
+        <EntityType Name="Muhit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AVM" Type="bit" />
+          <Property Name="Belediye" Type="bit" />
+          <Property Name="Cami" Type="bit" />
+          <Property Name="DenizeSifir" Type="bit" />
+          <Property Name="Eczane" Type="bit" />
+          <Property Name="EglenceMerkezi" Type="bit" />
+          <Property Name="Fuar" Type="bit" />
+          <Property Name="Hastane" Type="bit" />
+          <Property Name="Lise" Type="bit" />
+          <Property Name="Market" Type="bit" />
+          <Property Name="Park" Type="bit" />
+          <Property Name="PolisMerkezi" Type="bit" />
+          <Property Name="SaglikOcagi" Type="bit" />
+          <Property Name="SemtPazari" Type="bit" />
+          <Property Name="SporSalonu" Type="bit" />
+          <Property Name="Üniversite" Type="bit" />
+          <Property Name="İlkokul_Ortaokul" Type="bit" />
+          <Property Name="İtfaiye" Type="bit" />
+          <Property Name="SehirMerkezi" Type="bit" />
+        </EntityType>
+        <EntityType Name="ResimDetay">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="50" />
+          <Property Name="RsimTable_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="ResimTablo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Ulasim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Anayol" Type="bit" />
+          <Property Name="Avrasya_Tuneli" Type="bit" />
+          <Property Name="Bagaz_Koprusu" Type="bit" />
+          <Property Name="Cadde" Type="bit" />
+          <Property Name="Dolmus" Type="bit" />
+          <Property Name="E5" Type="bit" />
+          <Property Name="HavaAlanı" Type="bit" />
+          <Property Name="Marmaray" Type="bit" />
+          <Property Name="Metro" Type="bit" />
+          <Property Name="Metrobüs" Type="bit" />
+          <Property Name="Otobus_Duragı" Type="bit" />
+          <Property Name="Sahil" Type="bit" />
+          <Property Name="TEM" Type="bit" />
+          <Property Name="İskele" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Adres_İl">
+          <End Role="İl" Type="Self.İl" Multiplicity="0..1" />
+          <End Role="Adres" Type="Self.Adres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="İl">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Adres">
+              <PropertyRef Name="İl_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Adres_İlce">
+          <End Role="İlce" Type="Self.İlce" Multiplicity="0..1" />
+          <End Role="Adres" Type="Self.Adres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="İlce">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Adres">
+              <PropertyRef Name="İlce_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Adres_Mahalle">
+          <End Role="Mahalle" Type="Self.Mahalle" Multiplicity="0..1" />
+          <End Role="Adres" Type="Self.Adres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mahalle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Adres">
+              <PropertyRef Name="Mahalle_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_Adres">
+          <End Role="Adres" Type="Self.Adres" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adres">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="Adress_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_Bagımsız_Ozellikler">
+          <End Role="Bagımsız_Ozellikler" Type="Self.Bagımsız_Ozellikler" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bagımsız_Ozellikler">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="Bag_Ozellikler_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_Cephe">
+          <End Role="Cephe" Type="Self.Cephe" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cephe">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="Cephe_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_DısOzellikler">
+          <End Role="DısOzellikler" Type="Self.DısOzellikler" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DısOzellikler">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="DısOzellik_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_Durum">
+          <End Role="Durum" Type="Self.Durum" Multiplicity="1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Durum">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="Durum_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_IcOzellikler">
+          <End Role="IcOzellikler" Type="Self.IcOzellikler" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IcOzellikler">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="İcOzellik_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_Manzara">
+          <End Role="Manzara" Type="Self.Manzara" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manzara">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="Manzara_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_Muhit">
+          <End Role="Muhit" Type="Self.Muhit" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Muhit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="Muhit_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_ResimTablo">
+          <End Role="ResimTablo" Type="Self.ResimTablo" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResimTablo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="ResimTablo_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_Ulasim">
+          <End Role="Ulasim" Type="Self.Ulasim" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ulasim">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="Ulasım_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResimDetay_ResimTablo">
+          <End Role="ResimTablo" Type="Self.ResimTablo" Multiplicity="0..1" />
+          <End Role="ResimDetay" Type="Self.ResimDetay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResimTablo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ResimDetay">
+              <PropertyRef Name="RsimTable_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbEmlakModelStoreContainer">
+          <EntitySet Name="Adres" EntityType="Self.Adres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bagımsız_Ozellikler" EntityType="Self.Bagımsız_Ozellikler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cephe" EntityType="Self.Cephe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DısOzellikler" EntityType="Self.DısOzellikler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Durum" EntityType="Self.Durum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IcOzellikler" EntityType="Self.IcOzellikler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="İl" EntityType="Self.İl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="İlce" EntityType="Self.İlce" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Konut" EntityType="Self.Konut" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mahalle" EntityType="Self.Mahalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Manzara" EntityType="Self.Manzara" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Muhit" EntityType="Self.Muhit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResimDetay" EntityType="Self.ResimDetay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResimTablo" EntityType="Self.ResimTablo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ulasim" EntityType="Self.Ulasim" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Adres_İl" Association="Self.FK_Adres_İl">
+            <End Role="İl" EntitySet="İl" />
+            <End Role="Adres" EntitySet="Adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adres_İlce" Association="Self.FK_Adres_İlce">
+            <End Role="İlce" EntitySet="İlce" />
+            <End Role="Adres" EntitySet="Adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adres_Mahalle" Association="Self.FK_Adres_Mahalle">
+            <End Role="Mahalle" EntitySet="Mahalle" />
+            <End Role="Adres" EntitySet="Adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_Adres" Association="Self.FK_Konut_Adres">
+            <End Role="Adres" EntitySet="Adres" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_Bagımsız_Ozellikler" Association="Self.FK_Konut_Bagımsız_Ozellikler">
+            <End Role="Bagımsız_Ozellikler" EntitySet="Bagımsız_Ozellikler" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_Cephe" Association="Self.FK_Konut_Cephe">
+            <End Role="Cephe" EntitySet="Cephe" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_DısOzellikler" Association="Self.FK_Konut_DısOzellikler">
+            <End Role="DısOzellikler" EntitySet="DısOzellikler" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_Durum" Association="Self.FK_Konut_Durum">
+            <End Role="Durum" EntitySet="Durum" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_IcOzellikler" Association="Self.FK_Konut_IcOzellikler">
+            <End Role="IcOzellikler" EntitySet="IcOzellikler" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_Manzara" Association="Self.FK_Konut_Manzara">
+            <End Role="Manzara" EntitySet="Manzara" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_Muhit" Association="Self.FK_Konut_Muhit">
+            <End Role="Muhit" EntitySet="Muhit" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_ResimTablo" Association="Self.FK_Konut_ResimTablo">
+            <End Role="ResimTablo" EntitySet="ResimTablo" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_Ulasim" Association="Self.FK_Konut_Ulasim">
+            <End Role="Ulasim" EntitySet="Ulasim" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResimDetay_ResimTablo" Association="Self.FK_ResimDetay_ResimTablo">
+            <End Role="ResimTablo" EntitySet="ResimTablo" />
+            <End Role="ResimDetay" EntitySet="ResimDetay" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbEmlakModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Adres">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="İl_Id" Type="Int32" />
+          <Property Name="İlce_Id" Type="Int32" />
+          <Property Name="Mahalle_Id" Type="Int32" />
+          <NavigationProperty Name="İl" Relationship="Self.FK_Adres_İl" FromRole="Adres" ToRole="İl" />
+          <NavigationProperty Name="İlce" Relationship="Self.FK_Adres_İlce" FromRole="Adres" ToRole="İlce" />
+          <NavigationProperty Name="Mahalle" Relationship="Self.FK_Adres_Mahalle" FromRole="Adres" ToRole="Mahalle" />
+          <NavigationProperty Name="Konut" Relationship="Self.FK_Konut_Adres" FromRole="Adres" ToRole="Konut" />
+        </EntityType>
+        <EntityType Name="Bagımsız_Ozellikler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="İlan_Tarihi" Type="DateTime" Precision="3" />
+          <Property Name="Fiyat" Type="Int32" />
+          <Property Name="m2" Type="Int32" />
+          <Property Name="Oda_sayisi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Bina_yasi" Type="Int32" />
+          <Property Name="Bulundugu_kat" Type="Int32" />
+          <Property Name="Toplam_Kat" Type="Int32" />
+          <Property Name="Isıtma_Tipi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Banyo_Sayısı" Type="Int32" />
+          <Property Name="Balkon" Type="Boolean" />
+          <Property Name="Esyalı" Type="Boolean" />
+          <Property Name="Kullanım_durumu" Type="Boolean" />
+          <Property Name="Site_ici" Type="Boolean" />
+          <Property Name="Aidat_TL_" Type="Int32" />
+          <Property Name="Krediye_uygun" Type="Boolean" />
+          <NavigationProperty Name="Konut" Relationship="Self.FK_Konut_Bagımsız_Ozellikler" FromRole="Bagımsız_Ozellikler" ToRole="Konut" />
+        </EntityType>
+        <EntityType Name="Cephe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Konut" Relationship="Self.FK_Konut_Cephe" FromRole="Cephe" ToRole="Konut" />
+        </EntityType>
+        <EntityType Name="DısOzellikler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Asansor" Type="Boolean" />
+          <Property Name="BuharOdası" Type="Boolean" />
+          <Property Name="Güvenlik" Type="Boolean" />
+          <Property Name="Hidrofor" Type="Boolean" />
+          <Property Name="IsıYalıtım" Type="Boolean" />
+          <Property Name="Jeneratör" Type="Boolean" />
+          <Property Name="KabloTV" Type="Boolean" />
+          <Property Name="KapalıGaraj" Type="Boolean" />
+          <Property Name="Kres" Type="Boolean" />
+          <Property Name="MüstakilHavuz" Type="Boolean" />
+          <Property Name="OtoPark" Type="Boolean" />
+          <Property Name="OyunParkı" Type="Boolean" />
+          <Property Name="Sauna" Type="Boolean" />
+          <Property Name="SesYalıtım" Type="Boolean" />
+          <Property Name="SporAlanı" Type="Boolean" />
+          <Property Name="SuDeposu" Type="Boolean" />
+          <Property Name="TenisKortu" Type="Boolean" />
+          <Property Name="Uydu" Type="Boolean" />
+          <Property Name="YangınMerdiveni" Type="Boolean" />
+          <Property Name="YüzmeHavuzu" Type="Boolean" />
+          <NavigationProperty Name="Konut" Relationship="Self.FK_Konut_DısOzellikler" FromRole="DısOzellikler" ToRole="Konut" />
+        </EntityType>
+        <EntityType Name="Durum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Durum1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Konut" Relationship="Self.FK_Konut_Durum" FromRole="Durum" ToRole="Konut" />
+        </EntityType>
+        <EntityType Name="IcOzellikler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Adsl" Type="Boolean" />
+          <Property Name="AhsapDograma" Type="Boolean" />
+          <Property Name="AkıllıEv" Type="Boolean" />
+          <Property Name="Alarm" Type="Boolean" />
+          <Property Name="AlaturkaTuvalet" Type="Boolean" />
+          <Property Name="AlüminyumDograma" Type="Boolean" />
+          <Property Name="AmerikanMutfak" Type="Boolean" />
+          <Property Name="AnkastreFırın" Type="Boolean" />
+          <Property Name="Asansor" Type="Boolean" />
+          <Property Name="Balkon" Type="Boolean" />
+          <Property Name="Barbekü" Type="Boolean" />
+          <Property Name="BeyazEsya" Type="Boolean" />
+          <Property Name="Boyalı" Type="Boolean" />
+          <Property Name="BulasıkMakinesi" Type="Boolean" />
+          <Property Name="Buzdolabı" Type="Boolean" />
+          <Property Name="DuvarKagıdı" Type="Boolean" />
+          <Property Name="DusaKabin" Type="Boolean" />
+          <Property Name="EbeveynBanyosu" Type="Boolean" />
+          <Property Name="Fiberİnternet" Type="Boolean" />
+          <Property Name="Fırın" Type="Boolean" />
+          <Property Name="GiyinmeOdası" Type="Boolean" />
+          <Property Name="GommeDolap" Type="Boolean" />
+          <Property Name="GoruntuluTelefon" Type="Boolean" />
+          <Property Name="Isıcam" Type="Boolean" />
+          <Property Name="Jakuzi" Type="Boolean" />
+          <Property Name="Kiler" Type="Boolean" />
+          <Property Name="Klima" Type="Boolean" />
+          <Property Name="Kuvet" Type="Boolean" />
+          <Property Name="LaminatZemin" Type="Boolean" />
+          <Property Name="Marley" Type="Boolean" />
+          <Property Name="Mobilya" Type="Boolean" />
+          <Property Name="PvcDograma" Type="Boolean" />
+          <Property Name="Panjur" Type="Boolean" />
+          <Property Name="ParkeZemin" Type="Boolean" />
+          <Property Name="SeramikZemin" Type="Boolean" />
+          <Property Name="SetUstuOcak" Type="Boolean" />
+          <Property Name="SpotAydınlanma" Type="Boolean" />
+          <Property Name="Teras" Type="Boolean" />
+          <Property Name="Termosifon" Type="Boolean" />
+          <Property Name="Vestiyer" Type="Boolean" />
+          <Property Name="Wi_Fi" Type="Boolean" />
+          <Property Name="CamasırKurutmaMakinesi" Type="Boolean" />
+          <Property Name="CamasırMakinesi" Type="Boolean" />
+          <Property Name="CamasırOdası" Type="Boolean" />
+          <Property Name="CelikKapı" Type="Boolean" />
+          <Property Name="Sofben" Type="Boolean" />
+          <Property Name="Somine" Type="Boolean" />
+          <NavigationProperty Name="Konut" Relationship="Self.FK_Konut_IcOzellikler" FromRole="IcOzellikler" ToRole="Konut" />
+        </EntityType>
+        <EntityType Name="İl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Adres" Relationship="Self.FK_Adres_İl" FromRole="İl" ToRole="Adres" />
+        </EntityType>
+        <EntityType Name="İlce">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Adres" Relationship="Self.FK_Adres_İlce" FromRole="İlce" ToRole="Adres" />
+        </EntityType>
+        <EntityType Name="Konut">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Baslık" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Acıklama" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Durum_Id" Type="Int32" Nullable="false" />
+          <Property Name="Bag_Ozellikler_Id" Type="Int32" />
+          <Property Name="Cephe_Id" Type="Int32" />
+          <Property Name="Adress_Id" Type="Int32" />
+          <Property Name="İcOzellik_Id" Type="Int32" />
+          <Property Name="DısOzellik_Id" Type="Int32" />
+          <Property Name="Muhit_Id" Type="Int32" />
+          <Property Name="Ulasım_Id" Type="Int32" />
+          <Property Name="Manzara_Id" Type="Int32" />
+          <Property Name="ResimTablo_Id" Type="Int32" />
+          <NavigationProperty Name="Adres" Relationship="Self.FK_Konut_Adres" FromRole="Konut" ToRole="Adres" />
+          <NavigationProperty Name="Bagımsız_Ozellikler" Relationship="Self.FK_Konut_Bagımsız_Ozellikler" FromRole="Konut" ToRole="Bagımsız_Ozellikler" />
+          <NavigationProperty Name="Cephe" Relationship="Self.FK_Konut_Cephe" FromRole="Konut" ToRole="Cephe" />
+          <NavigationProperty Name="DısOzellikler" Relationship="Self.FK_Konut_DısOzellikler" FromRole="Konut" ToRole="DısOzellikler" />
+          <NavigationProperty Name="Durum" Relationship="Self.FK_Konut_Durum" FromRole="Konut" ToRole="Durum" />
+          <NavigationProperty Name="IcOzellikler" Relationship="Self.FK_Konut_IcOzellikler" FromRole="Konut" ToRole="IcOzellikler" />
+          <NavigationProperty Name="Manzara" Relationship="Self.FK_Konut_Manzara" FromRole="Konut" ToRole="Manzara" />
+          <NavigationProperty Name="Muhit" Relationship="Self.FK_Konut_Muhit" FromRole="Konut" ToRole="Muhit" />
+          <NavigationProperty Name="ResimTablo" Relationship="Self.FK_Konut_ResimTablo" FromRole="Konut" ToRole="ResimTablo" />
+          <NavigationProperty Name="Ulasim" Relationship="Self.FK_Konut_Ulasim" FromRole="Konut" ToRole="Ulasim" />
+        </EntityType>
+        <EntityType Name="Mahalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Adres" Relationship="Self.FK_Adres_Mahalle" FromRole="Mahalle" ToRole="Adres" />
+        </EntityType>
+        <EntityType Name="Manzara">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Bogaz" Type="Boolean" />
+          <Property Name="Deniz" Type="Boolean" />
+          <Property Name="Doga" Type="Boolean" />
+          <Property Name="Göl" Type="Boolean" />
+          <Property Name="Havuz" Type="Boolean" />
+          <Property Name="Sehir" Type="Boolean" />
+          <NavigationProperty Name="Konut" Relationship="Self.FK_Konut_Manzara" FromRole="Manzara" ToRole="Konut" />
+        </EntityType>
+        <EntityType Name="Muhit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AVM" Type="Boolean" />
+          <Property Name="Belediye" Type="Boolean" />
+          <Property Name="Cami" Type="Boolean" />
+          <Property Name="DenizeSifir" Type="Boolean" />
+          <Property Name="Eczane" Type="Boolean" />
+          <Property Name="EglenceMerkezi" Type="Boolean" />
+          <Property Name="Fuar" Type="Boolean" />
+          <Property Name="Hastane" Type="Boolean" />
+          <Property Name="Lise" Type="Boolean" />
+          <Property Name="Market" Type="Boolean" />
+          <Property Name="Park" Type="Boolean" />
+          <Property Name="PolisMerkezi" Type="Boolean" />
+          <Property Name="SaglikOcagi" Type="Boolean" />
+          <Property Name="SemtPazari" Type="Boolean" />
+          <Property Name="SporSalonu" Type="Boolean" />
+          <Property Name="Üniversite" Type="Boolean" />
+          <Property Name="İlkokul_Ortaokul" Type="Boolean" />
+          <Property Name="İtfaiye" Type="Boolean" />
+          <Property Name="SehirMerkezi" Type="Boolean" />
+          <NavigationProperty Name="Konut" Relationship="Self.FK_Konut_Muhit" FromRole="Muhit" ToRole="Konut" />
+        </EntityType>
+        <EntityType Name="ResimDetay">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageUrl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RsimTable_Id" Type="Int32" />
+          <NavigationProperty Name="ResimTablo" Relationship="Self.FK_ResimDetay_ResimTablo" FromRole="ResimDetay" ToRole="ResimTablo" />
+        </EntityType>
+        <EntityType Name="ResimTablo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Konut" Relationship="Self.FK_Konut_ResimTablo" FromRole="ResimTablo" ToRole="Konut" />
+          <NavigationProperty Name="ResimDetay" Relationship="Self.FK_ResimDetay_ResimTablo" FromRole="ResimTablo" ToRole="ResimDetay" />
+        </EntityType>
+        <EntityType Name="Ulasim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Anayol" Type="Boolean" />
+          <Property Name="Avrasya_Tuneli" Type="Boolean" />
+          <Property Name="Bagaz_Koprusu" Type="Boolean" />
+          <Property Name="Cadde" Type="Boolean" />
+          <Property Name="Dolmus" Type="Boolean" />
+          <Property Name="E5" Type="Boolean" />
+          <Property Name="HavaAlanı" Type="Boolean" />
+          <Property Name="Marmaray" Type="Boolean" />
+          <Property Name="Metro" Type="Boolean" />
+          <Property Name="Metrobüs" Type="Boolean" />
+          <Property Name="Otobus_Duragı" Type="Boolean" />
+          <Property Name="Sahil" Type="Boolean" />
+          <Property Name="TEM" Type="Boolean" />
+          <Property Name="İskele" Type="Boolean" />
+          <NavigationProperty Name="Konut" Relationship="Self.FK_Konut_Ulasim" FromRole="Ulasim" ToRole="Konut" />
+        </EntityType>
+        <Association Name="FK_Adres_İl">
+          <End Role="İl" Type="Self.İl" Multiplicity="0..1" />
+          <End Role="Adres" Type="Self.Adres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="İl">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Adres">
+              <PropertyRef Name="İl_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Adres_İlce">
+          <End Role="İlce" Type="Self.İlce" Multiplicity="0..1" />
+          <End Role="Adres" Type="Self.Adres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="İlce">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Adres">
+              <PropertyRef Name="İlce_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Adres_Mahalle">
+          <End Role="Mahalle" Type="Self.Mahalle" Multiplicity="0..1" />
+          <End Role="Adres" Type="Self.Adres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mahalle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Adres">
+              <PropertyRef Name="Mahalle_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_Adres">
+          <End Role="Adres" Type="Self.Adres" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adres">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="Adress_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_Bagımsız_Ozellikler">
+          <End Role="Bagımsız_Ozellikler" Type="Self.Bagımsız_Ozellikler" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bagımsız_Ozellikler">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="Bag_Ozellikler_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_Cephe">
+          <End Role="Cephe" Type="Self.Cephe" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cephe">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="Cephe_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_DısOzellikler">
+          <End Role="DısOzellikler" Type="Self.DısOzellikler" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DısOzellikler">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="DısOzellik_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_Durum">
+          <End Role="Durum" Type="Self.Durum" Multiplicity="1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Durum">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="Durum_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_IcOzellikler">
+          <End Role="IcOzellikler" Type="Self.IcOzellikler" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IcOzellikler">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="İcOzellik_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_Manzara">
+          <End Role="Manzara" Type="Self.Manzara" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manzara">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="Manzara_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_Muhit">
+          <End Role="Muhit" Type="Self.Muhit" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Muhit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="Muhit_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_ResimTablo">
+          <End Role="ResimTablo" Type="Self.ResimTablo" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResimTablo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="ResimTablo_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Konut_Ulasim">
+          <End Role="Ulasim" Type="Self.Ulasim" Multiplicity="0..1" />
+          <End Role="Konut" Type="Self.Konut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ulasim">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Konut">
+              <PropertyRef Name="Ulasım_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResimDetay_ResimTablo">
+          <End Role="ResimTablo" Type="Self.ResimTablo" Multiplicity="0..1" />
+          <End Role="ResimDetay" Type="Self.ResimDetay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResimTablo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ResimDetay">
+              <PropertyRef Name="RsimTable_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DbEmlakEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Adres" EntityType="Self.Adres" />
+          <EntitySet Name="Bagımsız_Ozellikler" EntityType="Self.Bagımsız_Ozellikler" />
+          <EntitySet Name="Cephe" EntityType="Self.Cephe" />
+          <EntitySet Name="DısOzellikler" EntityType="Self.DısOzellikler" />
+          <EntitySet Name="Durum" EntityType="Self.Durum" />
+          <EntitySet Name="IcOzellikler" EntityType="Self.IcOzellikler" />
+          <EntitySet Name="İl" EntityType="Self.İl" />
+          <EntitySet Name="İlce" EntityType="Self.İlce" />
+          <EntitySet Name="Konut" EntityType="Self.Konut" />
+          <EntitySet Name="Mahalle" EntityType="Self.Mahalle" />
+          <EntitySet Name="Manzara" EntityType="Self.Manzara" />
+          <EntitySet Name="Muhit" EntityType="Self.Muhit" />
+          <EntitySet Name="ResimDetay" EntityType="Self.ResimDetay" />
+          <EntitySet Name="ResimTablo" EntityType="Self.ResimTablo" />
+          <EntitySet Name="Ulasim" EntityType="Self.Ulasim" />
+          <AssociationSet Name="FK_Adres_İl" Association="Self.FK_Adres_İl">
+            <End Role="İl" EntitySet="İl" />
+            <End Role="Adres" EntitySet="Adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adres_İlce" Association="Self.FK_Adres_İlce">
+            <End Role="İlce" EntitySet="İlce" />
+            <End Role="Adres" EntitySet="Adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adres_Mahalle" Association="Self.FK_Adres_Mahalle">
+            <End Role="Mahalle" EntitySet="Mahalle" />
+            <End Role="Adres" EntitySet="Adres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_Adres" Association="Self.FK_Konut_Adres">
+            <End Role="Adres" EntitySet="Adres" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_Bagımsız_Ozellikler" Association="Self.FK_Konut_Bagımsız_Ozellikler">
+            <End Role="Bagımsız_Ozellikler" EntitySet="Bagımsız_Ozellikler" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_Cephe" Association="Self.FK_Konut_Cephe">
+            <End Role="Cephe" EntitySet="Cephe" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_DısOzellikler" Association="Self.FK_Konut_DısOzellikler">
+            <End Role="DısOzellikler" EntitySet="DısOzellikler" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_Durum" Association="Self.FK_Konut_Durum">
+            <End Role="Durum" EntitySet="Durum" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_IcOzellikler" Association="Self.FK_Konut_IcOzellikler">
+            <End Role="IcOzellikler" EntitySet="IcOzellikler" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_Manzara" Association="Self.FK_Konut_Manzara">
+            <End Role="Manzara" EntitySet="Manzara" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_Muhit" Association="Self.FK_Konut_Muhit">
+            <End Role="Muhit" EntitySet="Muhit" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_ResimTablo" Association="Self.FK_Konut_ResimTablo">
+            <End Role="ResimTablo" EntitySet="ResimTablo" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Konut_Ulasim" Association="Self.FK_Konut_Ulasim">
+            <End Role="Ulasim" EntitySet="Ulasim" />
+            <End Role="Konut" EntitySet="Konut" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResimDetay_ResimTablo" Association="Self.FK_ResimDetay_ResimTablo">
+            <End Role="ResimTablo" EntitySet="ResimTablo" />
+            <End Role="ResimDetay" EntitySet="ResimDetay" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbEmlakModelStoreContainer" CdmEntityContainer="DbEmlakEntities1">
+          <EntitySetMapping Name="Adres">
+            <EntityTypeMapping TypeName="DbEmlakModel.Adres">
+              <MappingFragment StoreEntitySet="Adres">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="İl_Id" ColumnName="İl_Id" />
+                <ScalarProperty Name="İlce_Id" ColumnName="İlce_Id" />
+                <ScalarProperty Name="Mahalle_Id" ColumnName="Mahalle_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bagımsız_Ozellikler">
+            <EntityTypeMapping TypeName="DbEmlakModel.Bagımsız_Ozellikler">
+              <MappingFragment StoreEntitySet="Bagımsız_Ozellikler">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="İlan_Tarihi" ColumnName="İlan_Tarihi" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="m2" ColumnName="m2" />
+                <ScalarProperty Name="Oda_sayisi" ColumnName="Oda_sayisi" />
+                <ScalarProperty Name="Bina_yasi" ColumnName="Bina_yasi" />
+                <ScalarProperty Name="Bulundugu_kat" ColumnName="Bulundugu_kat" />
+                <ScalarProperty Name="Toplam_Kat" ColumnName="Toplam_Kat" />
+                <ScalarProperty Name="Isıtma_Tipi" ColumnName="Isıtma_Tipi" />
+                <ScalarProperty Name="Banyo_Sayısı" ColumnName="Banyo_Sayısı" />
+                <ScalarProperty Name="Balkon" ColumnName="Balkon" />
+                <ScalarProperty Name="Esyalı" ColumnName="Esyalı" />
+                <ScalarProperty Name="Kullanım_durumu" ColumnName="Kullanım_durumu" />
+                <ScalarProperty Name="Site_ici" ColumnName="Site_ici" />
+                <ScalarProperty Name="Aidat_TL_" ColumnName="Aidat(TL)" />
+                <ScalarProperty Name="Krediye_uygun" ColumnName="Krediye_uygun" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cephe">
+            <EntityTypeMapping TypeName="DbEmlakModel.Cephe">
+              <MappingFragment StoreEntitySet="Cephe">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DısOzellikler">
+            <EntityTypeMapping TypeName="DbEmlakModel.DısOzellikler">
+              <MappingFragment StoreEntitySet="DısOzellikler">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Asansor" ColumnName="Asansor" />
+                <ScalarProperty Name="BuharOdası" ColumnName="BuharOdası" />
+                <ScalarProperty Name="Güvenlik" ColumnName="Güvenlik" />
+                <ScalarProperty Name="Hidrofor" ColumnName="Hidrofor" />
+                <ScalarProperty Name="IsıYalıtım" ColumnName="IsıYalıtım" />
+                <ScalarProperty Name="Jeneratör" ColumnName="Jeneratör" />
+                <ScalarProperty Name="KabloTV" ColumnName="KabloTV" />
+                <ScalarProperty Name="KapalıGaraj" ColumnName="KapalıGaraj" />
+                <ScalarProperty Name="Kres" ColumnName="Kres" />
+                <ScalarProperty Name="MüstakilHavuz" ColumnName="MüstakilHavuz" />
+                <ScalarProperty Name="OtoPark" ColumnName="OtoPark" />
+                <ScalarProperty Name="OyunParkı" ColumnName="OyunParkı" />
+                <ScalarProperty Name="Sauna" ColumnName="Sauna" />
+                <ScalarProperty Name="SesYalıtım" ColumnName="SesYalıtım" />
+                <ScalarProperty Name="SporAlanı" ColumnName="SporAlanı" />
+                <ScalarProperty Name="SuDeposu" ColumnName="SuDeposu" />
+                <ScalarProperty Name="TenisKortu" ColumnName="TenisKortu" />
+                <ScalarProperty Name="Uydu" ColumnName="Uydu" />
+                <ScalarProperty Name="YangınMerdiveni" ColumnName="YangınMerdiveni" />
+                <ScalarProperty Name="YüzmeHavuzu" ColumnName="YüzmeHavuzu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Durum">
+            <EntityTypeMapping TypeName="DbEmlakModel.Durum">
+              <MappingFragment StoreEntitySet="Durum">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Durum1" ColumnName="Durum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IcOzellikler">
+            <EntityTypeMapping TypeName="DbEmlakModel.IcOzellikler">
+              <MappingFragment StoreEntitySet="IcOzellikler">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Adsl" ColumnName="Adsl" />
+                <ScalarProperty Name="AhsapDograma" ColumnName="AhsapDograma" />
+                <ScalarProperty Name="AkıllıEv" ColumnName="AkıllıEv" />
+                <ScalarProperty Name="Alarm" ColumnName="Alarm" />
+                <ScalarProperty Name="AlaturkaTuvalet" ColumnName="AlaturkaTuvalet" />
+                <ScalarProperty Name="AlüminyumDograma" ColumnName="AlüminyumDograma" />
+                <ScalarProperty Name="AmerikanMutfak" ColumnName="AmerikanMutfak" />
+                <ScalarProperty Name="AnkastreFırın" ColumnName="AnkastreFırın" />
+                <ScalarProperty Name="Asansor" ColumnName="Asansor" />
+                <ScalarProperty Name="Balkon" ColumnName="Balkon" />
+                <ScalarProperty Name="Barbekü" ColumnName="Barbekü" />
+                <ScalarProperty Name="BeyazEsya" ColumnName="BeyazEsya" />
+                <ScalarProperty Name="Boyalı" ColumnName="Boyalı" />
+                <ScalarProperty Name="BulasıkMakinesi" ColumnName="BulasıkMakinesi" />
+                <ScalarProperty Name="Buzdolabı" ColumnName="Buzdolabı" />
+                <ScalarProperty Name="DuvarKagıdı" ColumnName="DuvarKagıdı" />
+                <ScalarProperty Name="DusaKabin" ColumnName="DusaKabin" />
+                <ScalarProperty Name="EbeveynBanyosu" ColumnName="EbeveynBanyosu" />
+                <ScalarProperty Name="Fiberİnternet" ColumnName="Fiberİnternet" />
+                <ScalarProperty Name="Fırın" ColumnName="Fırın" />
+                <ScalarProperty Name="GiyinmeOdası" ColumnName="GiyinmeOdası" />
+                <ScalarProperty Name="GommeDolap" ColumnName="GommeDolap" />
+                <ScalarProperty Name="GoruntuluTelefon" ColumnName="GoruntuluTelefon" />
+                <ScalarProperty Name="Isıcam" ColumnName="Isıcam" />
+                <ScalarProperty Name="Jakuzi" ColumnName="Jakuzi" />
+                <ScalarProperty Name="Kiler" ColumnName="Kiler" />
+                <ScalarProperty Name="Klima" ColumnName="Klima" />
+                <ScalarProperty Name="Kuvet" ColumnName="Kuvet" />
+                <ScalarProperty Name="LaminatZemin" ColumnName="LaminatZemin" />
+                <ScalarProperty Name="Marley" ColumnName="Marley" />
+                <ScalarProperty Name="Mobilya" ColumnName="Mobilya" />
+                <ScalarProperty Name="PvcDograma" ColumnName="PvcDograma" />
+                <ScalarProperty Name="Panjur" ColumnName="Panjur" />
+                <ScalarProperty Name="ParkeZemin" ColumnName="ParkeZemin" />
+                <ScalarProperty Name="SeramikZemin" ColumnName="SeramikZemin" />
+                <ScalarProperty Name="SetUstuOcak" ColumnName="SetUstuOcak" />
+                <ScalarProperty Name="SpotAydınlanma" ColumnName="SpotAydınlanma" />
+                <ScalarProperty Name="Teras" ColumnName="Teras" />
+                <ScalarProperty Name="Termosifon" ColumnName="Termosifon" />
+                <ScalarProperty Name="Vestiyer" ColumnName="Vestiyer" />
+                <ScalarProperty Name="Wi_Fi" ColumnName="Wi-Fi" />
+                <ScalarProperty Name="CamasırKurutmaMakinesi" ColumnName="CamasırKurutmaMakinesi" />
+                <ScalarProperty Name="CamasırMakinesi" ColumnName="CamasırMakinesi" />
+                <ScalarProperty Name="CamasırOdası" ColumnName="CamasırOdası" />
+                <ScalarProperty Name="CelikKapı" ColumnName="CelikKapı" />
+                <ScalarProperty Name="Sofben" ColumnName="Sofben" />
+                <ScalarProperty Name="Somine" ColumnName="Somine" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="İl">
+            <EntityTypeMapping TypeName="DbEmlakModel.İl">
+              <MappingFragment StoreEntitySet="İl">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="İlce">
+            <EntityTypeMapping TypeName="DbEmlakModel.İlce">
+              <MappingFragment StoreEntitySet="İlce">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Konut">
+            <EntityTypeMapping TypeName="DbEmlakModel.Konut">
+              <MappingFragment StoreEntitySet="Konut">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Baslık" ColumnName="Baslık" />
+                <ScalarProperty Name="Acıklama" ColumnName="Acıklama" />
+                <ScalarProperty Name="Durum_Id" ColumnName="Durum_Id" />
+                <ScalarProperty Name="Bag_Ozellikler_Id" ColumnName="Bag_Ozellikler_Id" />
+                <ScalarProperty Name="Cephe_Id" ColumnName="Cephe_Id" />
+                <ScalarProperty Name="Adress_Id" ColumnName="Adress_Id" />
+                <ScalarProperty Name="İcOzellik_Id" ColumnName="İcOzellik_Id" />
+                <ScalarProperty Name="DısOzellik_Id" ColumnName="DısOzellik_Id" />
+                <ScalarProperty Name="Muhit_Id" ColumnName="Muhit_Id" />
+                <ScalarProperty Name="Ulasım_Id" ColumnName="Ulasım_Id" />
+                <ScalarProperty Name="Manzara_Id" ColumnName="Manzara_Id" />
+                <ScalarProperty Name="ResimTablo_Id" ColumnName="ResimTablo_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mahalle">
+            <EntityTypeMapping TypeName="DbEmlakModel.Mahalle">
+              <MappingFragment StoreEntitySet="Mahalle">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Manzara">
+            <EntityTypeMapping TypeName="DbEmlakModel.Manzara">
+              <MappingFragment StoreEntitySet="Manzara">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Bogaz" ColumnName="Bogaz" />
+                <ScalarProperty Name="Deniz" ColumnName="Deniz" />
+                <ScalarProperty Name="Doga" ColumnName="Doga" />
+                <ScalarProperty Name="Göl" ColumnName="Göl" />
+                <ScalarProperty Name="Havuz" ColumnName="Havuz" />
+                <ScalarProperty Name="Sehir" ColumnName="Sehir" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Muhit">
+            <EntityTypeMapping TypeName="DbEmlakModel.Muhit">
+              <MappingFragment StoreEntitySet="Muhit">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AVM" ColumnName="AVM" />
+                <ScalarProperty Name="Belediye" ColumnName="Belediye" />
+                <ScalarProperty Name="Cami" ColumnName="Cami" />
+                <ScalarProperty Name="DenizeSifir" ColumnName="DenizeSifir" />
+                <ScalarProperty Name="Eczane" ColumnName="Eczane" />
+                <ScalarProperty Name="EglenceMerkezi" ColumnName="EglenceMerkezi" />
+                <ScalarProperty Name="Fuar" ColumnName="Fuar" />
+                <ScalarProperty Name="Hastane" ColumnName="Hastane" />
+                <ScalarProperty Name="Lise" ColumnName="Lise" />
+                <ScalarProperty Name="Market" ColumnName="Market" />
+                <ScalarProperty Name="Park" ColumnName="Park" />
+                <ScalarProperty Name="PolisMerkezi" ColumnName="PolisMerkezi" />
+                <ScalarProperty Name="SaglikOcagi" ColumnName="SaglikOcagi" />
+                <ScalarProperty Name="SemtPazari" ColumnName="SemtPazari" />
+                <ScalarProperty Name="SporSalonu" ColumnName="SporSalonu" />
+                <ScalarProperty Name="Üniversite" ColumnName="Üniversite" />
+                <ScalarProperty Name="İlkokul_Ortaokul" ColumnName="İlkokul_Ortaokul" />
+                <ScalarProperty Name="İtfaiye" ColumnName="İtfaiye" />
+                <ScalarProperty Name="SehirMerkezi" ColumnName="SehirMerkezi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResimDetay">
+            <EntityTypeMapping TypeName="DbEmlakModel.ResimDetay">
+              <MappingFragment StoreEntitySet="ResimDetay">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="RsimTable_Id" ColumnName="RsimTable_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResimTablo">
+            <EntityTypeMapping TypeName="DbEmlakModel.ResimTablo">
+              <MappingFragment StoreEntitySet="ResimTablo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ulasim">
+            <EntityTypeMapping TypeName="DbEmlakModel.Ulasim">
+              <MappingFragment StoreEntitySet="Ulasim">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Anayol" ColumnName="Anayol" />
+                <ScalarProperty Name="Avrasya_Tuneli" ColumnName="Avrasya_Tuneli" />
+                <ScalarProperty Name="Bagaz_Koprusu" ColumnName="Bagaz_Koprusu" />
+                <ScalarProperty Name="Cadde" ColumnName="Cadde" />
+                <ScalarProperty Name="Dolmus" ColumnName="Dolmus" />
+                <ScalarProperty Name="E5" ColumnName="E5" />
+                <ScalarProperty Name="HavaAlanı" ColumnName="HavaAlanı" />
+                <ScalarProperty Name="Marmaray" ColumnName="Marmaray" />
+                <ScalarProperty Name="Metro" ColumnName="Metro" />
+                <ScalarProperty Name="Metrobüs" ColumnName="Metrobüs" />
+                <ScalarProperty Name="Otobus_Duragı" ColumnName="Otobus_Duragı" />
+                <ScalarProperty Name="Sahil" ColumnName="Sahil" />
+                <ScalarProperty Name="TEM" ColumnName="TEM" />
+                <ScalarProperty Name="İskele" ColumnName="İskele" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

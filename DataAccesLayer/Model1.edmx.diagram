@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6946dcfa88094b7a91f76243d6b37a84" Name="Diagram1">
+        <EntityTypeShape EntityType="DbEmlakModel.Adres" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbEmlakModel.Bagımsız_Ozellikler" Width="1.5" PointX="0.75" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbEmlakModel.Cephe" Width="1.5" PointX="0.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbEmlakModel.DısOzellikler" Width="1.5" PointX="0.75" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbEmlakModel.Durum" Width="1.5" PointX="0.75" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbEmlakModel.IcOzellikler" Width="1.5" PointX="0.75" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbEmlakModel.İl" Width="1.5" PointX="1.5" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbEmlakModel.İlce" Width="1.5" PointX="1.5" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbEmlakModel.Konut" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbEmlakModel.Mahalle" Width="1.5" PointX="1.5" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbEmlakModel.Manzara" Width="1.5" PointX="0.75" PointY="48.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbEmlakModel.Muhit" Width="1.5" PointX="0.75" PointY="51.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbEmlakModel.ResimDetay" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbEmlakModel.ResimTablo" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbEmlakModel.Ulasim" Width="1.5" PointX="0.75" PointY="57.75" IsExpanded="true" />
+        <AssociationConnector Association="DbEmlakModel.FK_Adres_İl" ManuallyRouted="false" />
+        <AssociationConnector Association="DbEmlakModel.FK_Adres_İlce" ManuallyRouted="false" />
+        <AssociationConnector Association="DbEmlakModel.FK_Adres_Mahalle" ManuallyRouted="false" />
+        <AssociationConnector Association="DbEmlakModel.FK_Konut_Adres" ManuallyRouted="false" />
+        <AssociationConnector Association="DbEmlakModel.FK_Konut_Bagımsız_Ozellikler" ManuallyRouted="false" />
+        <AssociationConnector Association="DbEmlakModel.FK_Konut_Cephe" ManuallyRouted="false" />
+        <AssociationConnector Association="DbEmlakModel.FK_Konut_DısOzellikler" ManuallyRouted="false" />
+        <AssociationConnector Association="DbEmlakModel.FK_Konut_Durum" ManuallyRouted="false" />
+        <AssociationConnector Association="DbEmlakModel.FK_Konut_IcOzellikler" ManuallyRouted="false" />
+        <AssociationConnector Association="DbEmlakModel.FK_Konut_Manzara" ManuallyRouted="false" />
+        <AssociationConnector Association="DbEmlakModel.FK_Konut_Muhit" ManuallyRouted="false" />
+        <AssociationConnector Association="DbEmlakModel.FK_Konut_ResimTablo" ManuallyRouted="false" />
+        <AssociationConnector Association="DbEmlakModel.FK_Konut_Ulasim" ManuallyRouted="false" />
+        <AssociationConnector Association="DbEmlakModel.FK_ResimDetay_ResimTablo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
